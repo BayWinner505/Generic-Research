@@ -1,8 +1,8 @@
-The Proposal: 
-- Fully identifies of the problems to be solved
-- Effectively decomposes all of the problems identified 
-
-The proposed solution would effectively:
-- meet the full needs of the client and user
-- mitigating all of the potential risks
-- addressing all of the relevant regulatory guidelines and legal requirements, in relation to software development and the industry.# Generic-Research
+   Appendix
+-Raw data or statistics 
+-Detailed Research methods
+-Maps, charts or graphs
+-Interview transcripts
+-Surveys or questionnaires
+-Additional examples or case studies
+-Only includes relvent materials that are refrenced in the main text
