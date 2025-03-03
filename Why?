@@ -9,3 +9,76 @@
 
 
 
+  Plan
+Cover Page
+Contents
+Page breaks
+Rationale
+-Short intro about what the client is asking for. 
+-Brief descrip on how it will work.
+Business Context
+-
+Requirements Table
+m/d|Title|Des.|
+-Functional Requirements
+--How the user will interact with the application - (Writing the code)
+---Fetuers it must have
+-Non-Functional Requirements
+--How the code will work (triad)
+---security
+---usability
+---scalability
+
+Key Performance Indicatiors
+help measure the success of the application.
+-Revenue Growth
+-Revenue per client
+-Profit Margins 
+-Client Retention Rate - How often they come back
+-Customer Satisfaction
+
+SWOT Analysis
+-Strengths
+--If the company already has users ...
+--If you have Trust ...
+--If you have knowledge ...
+-Weakness
+--If APi's or csv files are acurate...
+-Opportunities
+--If it can be scaled...
+-- If you can make another...
+-Threats
+--Legal issues of info from online
+--Legal issues of making the program itself
+--Legal issues  of software legalities.
+
+Solution itslef
+Description of the proposed Solution
+-Sections
+-- what i need to look out for
+-- what is good/bad
+-- how it meets the clients needs.
+--if there are any laws i need to comply with
+--User Case scenarios
+
+Accessibility Features
+-User friendly
+-Different fonts
+-colours
+-sizing
+
+Risks
+-offline vs online - api
+- cloud
+- server
+-software licence
+-copyright
+-Laws
+
+
+
+
+
+
+
+
