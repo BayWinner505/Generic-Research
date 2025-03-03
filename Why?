@@ -7,9 +7,17 @@
 -Additional examples or case studies
 -Only includes relvent materials that are refrenced in the main text
 
+Laws
+--Intellectual property rights and licences
+--Consumer protection 
+--Data Protection Laws
+--System security -Allowing the  application to have security allows the user‘s data to be secure. 
+--Age ratings and classifications -he  program should be age related / specific. 
+--Territorial Restrictions 
+Ethical implications
 
 
-  Plan
+  Planned Proposal
 Cover Page
 Contents
 Page breaks
@@ -36,6 +44,8 @@ help measure the success of the application.
 -Profit Margins 
 -Client Retention Rate - How often they come back
 -Customer Satisfaction
+- reviews
+
 
 SWOT Analysis
 -Strengths
@@ -54,6 +64,7 @@ SWOT Analysis
 
 Solution itslef
 Description of the proposed Solution
+Code of conduct
 -Sections
 -- what i need to look out for
 -- what is good/bad
@@ -61,7 +72,11 @@ Description of the proposed Solution
 --if there are any laws i need to comply with
 --User Case scenarios
 
-Accessibility Features
+
+Ethical implications
+
+
+Accessibility Features + Inclusion and diversity
 -User friendly
 -Different fonts
 -colours
@@ -74,6 +89,78 @@ Risks
 -software licence
 -copyright
 -Laws
+--Intellectual property rights and licences
+--Consumer protection 
+--Data Protection Laws
+--System security 
+--Responsibilities concerning staff And employment strategies 
+--Age ratings and classifications
+
+Design Documentaion
+Draw.io 
+Flowchart
+Data Scheme
+Client Requirements
+Data Dictionary
+p/f|Fieldname| Caption|Data Type |Validation|Comments|Example
+
+Design Documentation
+
+Algorithms
+- Logins
+- Forgot Password 
+- Create Account
+
+Data FLow Diagrams
+-How data moves thorough the system
+
+Clearly Identify
+Api's
+CSV files
+DataBases 
+
+Data FLow Diagrams
+how data moves thorough the system
+
+FLowchart
+A modular approach, incorporating subroutines, procedures, and loops as appropriate. 
+Wirefarme
+Canva / figma
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
