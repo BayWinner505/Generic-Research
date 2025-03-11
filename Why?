@@ -46,6 +46,12 @@ help measure the success of the application.
 -Customer Satisfaction
 - reviews
 
+User Acceptance 
+As a user...
+I want... 
+so that...
+Acceptance...
+
 
 SWOT Analysis
 -Strengths
@@ -72,7 +78,7 @@ Code of conduct
 --if there are any laws i need to comply with
 --User Case scenarios
 
-
+Justification
 Ethical implications
 
 
@@ -127,6 +133,7 @@ A modular approach, incorporating subroutines, procedures, and loops as appropri
 Wirefarme
 Canva / figma
 
+In order for my application to be be correct legally, I will make sure that my code always complyning with any gdpr and data protection laws. 
 
 
 
