@@ -60,6 +60,9 @@ SWOT Analysis
 --If you have knowledge ...
 -Weakness
 --If APi's or csv files are acurate...
+--If advice given is accurate. 
+-- any Legal/ Ethical issues with installing chargers. 
+
 -Opportunities
 --If it can be scaled...
 -- If you can make another...
@@ -98,9 +101,9 @@ Risks
 --Intellectual property rights and licences
 --Consumer protection 
 --Data Protection Laws
---System security 
---Responsibilities concerning staff And employment strategies 
---Age ratings and classifications
+--System security- Login /Procection
+--Responsibilities concerning staff And employment strategies  - Data
+--Age ratings and classifications - what is the age of current clients?
 
 Design Documentaion
 Draw.io 
@@ -133,9 +136,7 @@ A modular approach, incorporating subroutines, procedures, and loops as appropri
 Wirefarme
 Canva / figma
 
-In order for my application to be be correct legally, I will make sure that my code always complyning with any gdpr and data protection laws. 
-
-
+laws summary thing
 
 
 
