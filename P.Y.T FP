@@ -1,1 +1,64 @@
+string connectionString =
+SqlConnection sqlConnection = new SqlConnection(connectionString);
+SqlCommand command = new SqlCommand("_______________", sqlConnection);
+
+Create table info
+
+string connectionString =
+SqlConnection sqlConnection = new SqlConnection(connectionString);
+SqlCommand command = new SqlCommand("_______________", sqlConnection);
+command.CommandType = CommandType.StoredProcedure;
+
+set variables
+command.Parameters.AddWithValue("@FiledName", VaraibleName);
+
+sqlConnection.Open();
+command.ExecuteNonQuery();
+sqlConnection.Close();
+
+read data
+string connectionString =
+SqlConnection sqlConnection = new SqlConnection(connectionString);
+SqlCommand command = new SqlCommand("_______________", sqlConnection);
+command.CommandType = CommandType.StoredProcedure;
+SqlDataAdapter sd = new SqlDataAdapter(cmd);
+DataTable dt = new DataTable();
+sqlConnection.Open();
+sd.Fill(dt);
+sqlConnection.Close();
+
+foreach (DataRow dr in dt.Rows)
+
+{
+    type Variable_Name = (Data_Type)(dr["Field_Name"]);
+    int personId = (int)(dr["Id"]);
+
+    txtPatients.AppendText(Variable_Name + "\t" + Variable_Name + Environment.NewLine);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
