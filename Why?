@@ -26,25 +26,9 @@ Rationale
 -Brief descrip on how it will work.
 Business Context
 -
-Requirements Table
-m/d|Title|Des.|
--Functional Requirements
---How the user will interact with the application - (Writing the code)
----Fetuers it must have
--Non-Functional Requirements
---How the code will work (triad)
----security
----usability
----scalability
 
-Key Performance Indicatiors
-help measure the success of the application.
--Revenue Growth
--Revenue per client
--Profit Margins 
--Client Retention Rate - How often they come back
--Customer Satisfaction
-- reviews
+
+
 
 User Acceptance 
 As a user...
@@ -53,33 +37,11 @@ so that...
 Acceptance...
 
 
-SWOT Analysis
--Strengths
---If the company already has users ...
---If you have Trust ...
---If you have knowledge ...
--Weakness
---If APi's or csv files are acurate...
---If advice given is accurate. 
--- any Legal/ Ethical issues with installing chargers. 
 
--Opportunities
---If it can be scaled...
--- If you can make another...
--Threats
---Legal issues of info from online
---Legal issues of making the program itself
---Legal issues  of software legalities.
 
-Solution itslef
-Description of the proposed Solution
-Code of conduct
--Sections
--- what i need to look out for
--- what is good/bad
--- how it meets the clients needs.
---if there are any laws i need to comply with
---User Case scenarios
+
+
+
 
 Justification
 Ethical implications
@@ -104,6 +66,11 @@ Risks
 --System security- Login /Procection
 --Responsibilities concerning staff And employment strategies  - Data
 --Age ratings and classifications - what is the age of current clients?
+laws summary thing
+
+
+
+
 
 Design Documentaion
 Draw.io 
@@ -123,18 +90,14 @@ Algorithms
 Data FLow Diagrams
 -How data moves thorough the system
 
-Clearly Identify
-Api's
-CSV files
-DataBases 
 
-Data FLow Diagrams
-how data moves thorough the system
 
-FLowchart
-A modular approach, incorporating subroutines, procedures, and loops as appropriate. 
-Wirefarme
-Canva / figma
+
+
+
+
+
+
 
 laws summary thing
 
@@ -142,9 +105,125 @@ laws summary thing
 column|Type|Null|Default
 each table
 
-drd 
+Data schemer
 User entity.
-wirefarme - canva
+
+
+
+ERD
+the entities could be Customer, Order, and Product.
+
+Each entity has attributes. For example:
+
+Customer: CustomerID (PK), Name, Email
+Order: OrderID (PK), OrderDate, CustomerID (FK)
+Product: ProductID (PK), Name, Price
+
+Define Relationships
+A Customer places an Order (1:M)
+An Order contains multiple Products (M:M)
+
+
+
+Entities - Rectangles
+Attributes - Ovals
+Diamonds - relationship
+
+
+Data Flow Diagram - Level 0 
+Entities (Squares) for "User"
+Process (Rounded Rectangle) for "Appointment Scheduler"
+Data Store (Parallel Lines) for "Database"
+
+1️⃣ User → (Requests Appointment) → Appointment Scheduler
+2️⃣ Appointment Scheduler → (Stores Appointment) → Database
+3️⃣ Appointment Scheduler → (Sends Confirmation) → User
+4️⃣ Appointment Scheduler → (Sends Notifications) → User
+
+Data Flow Diagram - Level 1
+
+Add Entities: "User", "Notification System".
+Add Processes: "Authenticate User", "Schedule Appointment", "Send Reminder".
+Add Data Stores: "User Database", "Appointment Database".
+
+
+1️⃣ User → (Enters Login Details) → Authenticate User
+2️⃣ Authenticate User → (Checks) → User Database
+3️⃣ User → (Selects Date & Time) → Schedule Appointment
+4️⃣ Schedule Appointment → (Saves) → Appointment Database
+5️⃣ Appointment Database → (Sends Confirmation) → User
+6️⃣ Appointment Database → (Triggers Reminder) → Notification System
+7️⃣ Notification System → (Sends Notification) → User
+
+
+
+1️⃣ User (Entity)
+
+UserID (PK)
+Name
+Email
+Phone
+Password
+
+2️⃣ Appointment (Entity)
+
+AppointmentID (PK)
+UserID (FK) → Links to User
+ServiceID (FK) → Links to Service
+Date
+Time
+Status (Scheduled, Completed, Canceled)
+
+3️⃣ Service (Entity)
+
+ServiceID (PK)
+ServiceName
+Description
+Duration
+Price
+4️⃣ Notification (Entity)
+
+NotificationID (PK)
+AppointmentID (FK) → Links to Appointment
+UserID (FK) → Links to User
+Message
+Timestamp
+Status (Sent, Pending)
+
+One User can book multiple Appointments → (1-to-Many)
+Each Appointment is linked to one Service → (Many-to-1)
+One Appointment can have multiple Notifications → (1-to-Many)
+
+Customer 
+
+
+Field Name	   Data Type	Size	Description	                         Constraints
+UserID	      INT	      -	   Unique identifier for users	       Primary Key (PK)
+Name	         VARCHAR	   100	Full name of the user	             Not Null
+Email         	VARCHAR	   255	User’s email address	Unique,         Not Null
+Password	      VARCHAR	   255	Encrypted password	                Not Null
+Phone   	      VARCHAR	   15	   User’s phone number	                Nullable
+SecurityAnswer	VARCHAR	   255	User-provided answer (hashed)	      Not Null
+
+
+
+AppointmentID	INT	      -	   Unique identifier for appointments	 Primary Key (PK)
+UserID	      INT	      -	   Links to the User table	             Foreign Key (FK)
+ServiceID	   INT	      -	   Links to the Service table	          Foreign Key (FK)
+Date	         DATE	      -	   Date of the appointment	             Not Null
+Time	         TIME	      -	   Time of the appointment	             Not Null
+Status	      ENUM	      -	   Scheduled, Completed, Canceled	    Default: Scheduled
+ServiceID	   INT	      -	   Unique identifier for services	    Primary Key (PK)
+ServiceName	   VARCHAR	   100	Name of the service	                Not Null
+Price	         DECIMAL	   6,2	Service cost	                      Not Null
+
+
+Prototype
+
+
+
+
+
 
 
 
