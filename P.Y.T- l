@@ -1,0 +1,56 @@
+Stored Procedures
+
+Create User details
+
+CREATE procedure [dbo].[CreateNewPatientRecord]
+
+(
+
+@FirstName nvarchar(100),
+@LastName nvarchar (100),
+@Telephone nvarchar (20),
+@Email nvarchar (50),
+@Password (50),
+@Date int,
+@Address nvarchar (100),
+@Security_Ans (50)
+
+)
+as
+begin
+Insert into Users values(@FirstName,@LastName,@Telephone,@Date,@Email,@Password,@Address,@Security_Ans)
+END
+
+----------------
+
+Get user details
+
+CREATE PROCEDURE [dbo].[Get_User_Detail]	
+AS
+BEGIN
+SELECT * FROM Users
+END
+
+-------------
+
+Delete Account
+
+CREATE procedure [dbo].[DeletePatient]
+
+(
+@ID int
+)
+as
+begin
+Delete from Users where ID = @ID
+End
+
+
+
+Update account Details
+
+
+
+
+
+
