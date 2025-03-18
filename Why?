@@ -8,14 +8,7 @@
 -software licence
 -copyright
 
--------Laws
---Intellectual property rights and licences?
---Consumer protection ?
---Data Protection Laws?
---System security- Login /Procection?
---Responsibilities concerning staff And employment strategies
---Data Usage
---Age ratings and classifications - what is the age of current clients?
+
 --Ethical implications
 
 laws summary thing
@@ -23,37 +16,6 @@ laws summary thing
 ------Need to do  Design Documentation---------
 
 
-Data schemer
-
-
-
-Design Documentaion
-
-Draw.io 
-Flowchart
-Data Scheme
-Client Requirements
-Data Dictionary
-p/f|Fieldname| Caption|Data Type |Validation|Comments|Example
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-column|Type|Null|Default
-each table
-
-Data schemer
 
 
 
@@ -75,7 +37,10 @@ Data schemer
 
 
 
-Prototype
+
+
+
+
 
 
 
