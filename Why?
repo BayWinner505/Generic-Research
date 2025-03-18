@@ -1,78 +1,34 @@
-   Appendix
--Raw data or statistics 
--Detailed Research methods
--Maps, charts or graphs
--Interview transcripts
--Surveys or questionnaires
--Additional examples or case studies
--Only includes relvent materials that are refrenced in the main text
 
-Laws
---Intellectual property rights and licences
---Consumer protection 
---Data Protection Laws
---System security -Allowing the  application to have security allows the user‘s data to be secure. 
---Age ratings and classifications -he  program should be age related / specific. 
---Territorial Restrictions 
-Ethical implications
+ -------need to do  Planned Proposal -----------
 
-
-  Planned Proposal
-Cover Page
-Contents
-Page breaks
-Rationale
--Short intro about what the client is asking for. 
--Brief descrip on how it will work.
-Business Context
--
-
-
-
-
-User Acceptance 
-As a user...
-I want... 
-so that...
-Acceptance...
-
-
-
-
-
-
-
-
-Justification
-Ethical implications
-
-
-Accessibility Features + Inclusion and diversity
--User friendly
--Different fonts
--colours
--sizing
-
-Risks
+------Risks
 -offline vs online - api
 - cloud
 - server
 -software licence
 -copyright
--Laws
---Intellectual property rights and licences
---Consumer protection 
---Data Protection Laws
---System security- Login /Procection
---Responsibilities concerning staff And employment strategies  - Data
+
+-------Laws
+--Intellectual property rights and licences?
+--Consumer protection ?
+--Data Protection Laws?
+--System security- Login /Procection?
+--Responsibilities concerning staff And employment strategies
+--Data Usage
 --Age ratings and classifications - what is the age of current clients?
+--Ethical implications
+
 laws summary thing
 
+------Need to do  Design Documentation---------
 
+
+Data schemer
 
 
 
 Design Documentaion
+
 Draw.io 
 Flowchart
 Data Scheme
@@ -80,15 +36,6 @@ Client Requirements
 Data Dictionary
 p/f|Fieldname| Caption|Data Type |Validation|Comments|Example
 
-Design Documentation
-
-Algorithms
-- Logins
-- Forgot Password 
-- Create Account
-
-Data FLow Diagrams
--How data moves thorough the system
 
 
 
@@ -99,123 +46,33 @@ Data FLow Diagrams
 
 
 
-laws summary thing
+
+
 
 
 column|Type|Null|Default
 each table
 
 Data schemer
-User entity.
 
 
 
-ERD
-the entities could be Customer, Order, and Product.
-
-Each entity has attributes. For example:
-
-Customer: CustomerID (PK), Name, Email
-Order: OrderID (PK), OrderDate, CustomerID (FK)
-Product: ProductID (PK), Name, Price
-
-Define Relationships
-A Customer places an Order (1:M)
-An Order contains multiple Products (M:M)
 
 
 
-Entities - Rectangles
-Attributes - Ovals
-Diamonds - relationship
-
-
-Data Flow Diagram - Level 0 
-Entities (Squares) for "User"
-Process (Rounded Rectangle) for "Appointment Scheduler"
-Data Store (Parallel Lines) for "Database"
-
-1️⃣ User → (Requests Appointment) → Appointment Scheduler
-2️⃣ Appointment Scheduler → (Stores Appointment) → Database
-3️⃣ Appointment Scheduler → (Sends Confirmation) → User
-4️⃣ Appointment Scheduler → (Sends Notifications) → User
-
-Data Flow Diagram - Level 1
-
-Add Entities: "User", "Notification System".
-Add Processes: "Authenticate User", "Schedule Appointment", "Send Reminder".
-Add Data Stores: "User Database", "Appointment Database".
-
-
-1️⃣ User → (Enters Login Details) → Authenticate User
-2️⃣ Authenticate User → (Checks) → User Database
-3️⃣ User → (Selects Date & Time) → Schedule Appointment
-4️⃣ Schedule Appointment → (Saves) → Appointment Database
-5️⃣ Appointment Database → (Sends Confirmation) → User
-6️⃣ Appointment Database → (Triggers Reminder) → Notification System
-7️⃣ Notification System → (Sends Notification) → User
 
 
 
-1️⃣ User (Entity)
-
-UserID (PK)
-Name
-Email
-Phone
-Password
-
-2️⃣ Appointment (Entity)
-
-AppointmentID (PK)
-UserID (FK) → Links to User
-ServiceID (FK) → Links to Service
-Date
-Time
-Status (Scheduled, Completed, Canceled)
-
-3️⃣ Service (Entity)
-
-ServiceID (PK)
-ServiceName
-Description
-Duration
-Price
-4️⃣ Notification (Entity)
-
-NotificationID (PK)
-AppointmentID (FK) → Links to Appointment
-UserID (FK) → Links to User
-Message
-Timestamp
-Status (Sent, Pending)
-
-One User can book multiple Appointments → (1-to-Many)
-Each Appointment is linked to one Service → (Many-to-1)
-One Appointment can have multiple Notifications → (1-to-Many)
-
-Customer 
-
-
-Field Name	   Data Type	Size	Description	                         Constraints
-UserID	      INT	      -	   Unique identifier for users	       Primary Key (PK)
-Name	         VARCHAR	   100	Full name of the user	             Not Null
-Email         	VARCHAR	   255	User’s email address	Unique,         Not Null
-Password	      VARCHAR	   255	Encrypted password	                Not Null
-Phone   	      VARCHAR	   15	   User’s phone number	                Nullable
-SecurityAnswer	VARCHAR	   255	User-provided answer (hashed)	      Not Null
 
 
 
-AppointmentID	INT	      -	   Unique identifier for appointments	 Primary Key (PK)
-UserID	      INT	      -	   Links to the User table	             Foreign Key (FK)
-ServiceID	   INT	      -	   Links to the Service table	          Foreign Key (FK)
-Date	         DATE	      -	   Date of the appointment	             Not Null
-Time	         TIME	      -	   Time of the appointment	             Not Null
-Status	      ENUM	      -	   Scheduled, Completed, Canceled	    Default: Scheduled
-ServiceID	   INT	      -	   Unique identifier for services	    Primary Key (PK)
-ServiceName	   VARCHAR	   100	Name of the service	                Not Null
-Price	         DECIMAL	   6,2	Service cost	                      Not Null
+
+
+
+
+
+
+
 
 
 Prototype
