@@ -68,6 +68,25 @@ begin
 
 Update Logins set password = @password , 
 where   email = @Emil
+--------------------
+Validate login
+
+CREATE PROCEDURE ValidateUser
+(
+@Username NVARCHAR(50),
+@Password NVARCHAR(255)
+)
+
+AS
+BEGIN 
+SET NOCOUNT ON;
+IF EXISTS (SELECT 1 FROM Users WHERE Username = @Username AND Password = @Password)
+        SELECT 1 AS Result ## Login successful
+    ELSE
+        SELECT 0 AS Result ## Login failed
+END
+
+------------------------------
 
 
 
