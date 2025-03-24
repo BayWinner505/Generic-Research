@@ -44,6 +44,45 @@ foreach (DataRow dr in dt.Rows)
 -----------------------------------------------------------------------------------
 
 login checker
+
+string user
+string pass
+
+if (ValidateUser(username, password))
+            {
+                Login successful
+            }
+            else
+            {
+                loing unsuccessful
+            }
+        }
+private bool ValidateUser(string username, string password)
+        {
+            string connectionString = dtat store
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("ValidateUser", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Username", username);
+                    cmd.Parameters.AddWithValue("@Password", password);
+
+                    conn.Open();
+                    int result = Convert.ToInt32(cmd.ExecuteScalar()); // Get result from stored procedure
+
+                    return result == 1; // Return true if login is valid
+                }
+            }
+        }
+
+
+
+
+
+
+
 start command
 con.Open
 SqlCommand command = new SqlCommand("_______________", sqlConnection);
