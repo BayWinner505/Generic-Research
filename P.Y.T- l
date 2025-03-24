@@ -1,13 +1,12 @@
 Stored Procedures
 
+-----------------
 Create User details
 
 CREATE procedure [dbo].[CreateNewPatientRecord]
 
 (
 
-@FirstName nvarchar(100),
-@LastName nvarchar (100),
 @Telephone nvarchar (20),
 @Email nvarchar (50),
 @Password (50),
@@ -45,9 +44,30 @@ begin
 Delete from Users where ID = @ID
 End
 
-
+-------------
 
 Update account Details
+
+CREATE procedure [dbo].[UpdatePatient]
+
+(
+
+@Fullname navchar(100),
+@enail navchar(50)
+@DateOfBirth int, 
+@Address nvarchar (50),
+@Telephone nvarchar(50),
+@Email nvarchar(50)
+@securityAnswer(50)
+
+)
+
+as
+
+begin
+
+Update Patients set FirstName = @FName , LastName = @LName , DateOfBirth = @DateOfBirth , Address = @Address , Telephone = @Telephone , Email=@Email
+where Id=@ID End
 
 
 
