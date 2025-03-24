@@ -53,9 +53,20 @@ command.Parameters.AddWithValue("@FiledName", txt_____.Text);
 command.Parameters.AddWithValue("@FiledName", txt_____.Text);
 inc count = (int)cmd.ExecuteScalar();
 con.Close()
+-------------------------------------------------------------------------------------
+Registering
 
 
+string username = txtUsername.Text.Trim();
+string password = txtPassword.Text.Trim();
+string confirmPassword = txtConfirmPassword.Text.Trim();
 
+if (password != confirmPassword)
+    {
+        lblMessage.Text = "Passwords do not match!";
+        lblMessage.ForeColor = System.Drawing.Color.Red;
+        return;
+    }
 
 
 
