@@ -1,6 +1,9 @@
+start command
 string connectionString =
 SqlConnection sqlConnection = new SqlConnection(connectionString);
 SqlCommand command = new SqlCommand("_______________", sqlConnection);
+
+-----------------------------------------------------------------------
 
 Create table info
 
@@ -16,6 +19,7 @@ sqlConnection.Open();
 command.ExecuteNonQuery();
 sqlConnection.Close();
 
+-----------------------------------------------------------------------
 read data
 string connectionString =
 SqlConnection sqlConnection = new SqlConnection(connectionString);
@@ -36,6 +40,21 @@ foreach (DataRow dr in dt.Rows)
     txtPatients.AppendText(Variable_Name + "\t" + Variable_Name + Environment.NewLine);
 
 }
+
+-----------------------------------------------------------------------------------
+
+login checker
+start command
+con.Open
+SqlCommand command = new SqlCommand("_______________", sqlConnection);
+
+Set variable
+command.Parameters.AddWithValue("@FiledName", txt_____.Text);
+command.Parameters.AddWithValue("@FiledName", txt_____.Text);
+inc count = (int)cmd.ExecuteScalar();
+con.Close()
+
+
 
 
 
