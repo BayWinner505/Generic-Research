@@ -1,0 +1,7 @@
+CREATE procedure [dbo].[login val]
+(
+@email nvarchar(100),
+@password nvarchar(100)
+)
+
+SELECT COUNT(*) datbasename WHERE username=@username AND password=@password";
