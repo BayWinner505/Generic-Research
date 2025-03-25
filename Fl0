@@ -1,0 +1,220 @@
+Step 1: Set Up Visual Studio for Python
+
+Before we start coding, you need to ensure that you have Visual Studio 2022 set up for Python development:
+
+1. Install Visual Studio 2022 from the official website.
+
+
+2. During installation, make sure to select the Python Development workload. This will install the necessary Python tools and libraries.
+
+
+3. Once installed, open Visual Studio and create a new Python project.
+
+
+
+
+---
+
+Step 2: Create the SQLite Database
+
+1. Open Visual Studio 2022.
+
+
+2. Create a new Python Console Application.
+
+
+3. Add a new Python file named database.py. This file will create an SQLite database and table for appointments.
+
+
+
+Code for database.py:
+
+import sqlite3
+
+def create_database():
+    # Connect to SQLite database (it creates the database if it doesn't exist)
+    conn = sqlite3.connect('appointments.db')
+    cursor = conn.cursor()
+
+    # Create the 'appointments' table if it doesn't already exist
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS appointments (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        date TEXT NOT NULL,
+        time TEXT NOT NULL,
+        description TEXT NOT NULL
+    )
+    """)
+
+    # Commit changes and close the connection
+    conn.commit()
+    conn.close()
+
+# Call the function to create the database
+create_database()
+
+What this does:
+
+This code creates a database file appointments.db and sets up a table appointments with id, date, time, and description columns.
+
+
+
+---
+
+Step 3: Install PyQt6 for GUI Development
+
+1. Install PyQt6 using the Python Package Manager in Visual Studio. To do this:
+
+Go to Tools → Python → Python Environments.
+
+Select your Python environment (e.g., Python 3.x).
+
+Click Install Package and type pyqt6.
+
+
+
+
+Alternatively, you can open a terminal and run:
+
+pip install pyqt6
+
+
+---
+
+Step 4: Design the UI Using PyQt6
+
+We will manually create the appointment scheduling UI using PyQt6. To keep things simple, I’ll create a basic window with fields for date, time, description, and a button to save the appointment.
+
+Code for main.py:
+
+import sys
+import sqlite3
+from PyQt6.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QLabel, QLineEdit, QDateEdit, QTimeEdit, QPushButton, QMessageBox
+
+class AppointmentScheduler(QMainWindow):
+    def __init__(self):
+        super().__init__()
+
+        # Set up the main window
+        self.setWindowTitle("Appointment Scheduler")
+        self.setGeometry(300, 300, 400, 250)
+
+        # Create the layout
+        layout = QVBoxLayout()
+
+        # Create the input fields for date, time, and description
+        self.date_label = QLabel("Appointment Date:")
+        self.date_input = QDateEdit()
+        self.date_input.setCalendarPopup(True)
+
+        self.time_label = QLabel("Appointment Time:")
+        self.time_input = QTimeEdit()
+
+        self.description_label = QLabel("Description:")
+        self.description_input = QLineEdit()
+
+        # Create the Save button
+        self.save_button = QPushButton("Save Appointment")
+        self.save_button.clicked.connect(self.save_appointment)
+
+        # Add widgets to the layout
+        layout.addWidget(self.date_label)
+        layout.addWidget(self.date_input)
+        layout.addWidget(self.time_label)
+        layout.addWidget(self.time_input)
+        layout.addWidget(self.description_label)
+        layout.addWidget(self.description_input)
+        layout.addWidget(self.save_button)
+
+        # Set the central widget of the main window
+        central_widget = QWidget()
+        central_widget.setLayout(layout)
+        self.setCentralWidget(central_widget)
+
+    def save_appointment(self):
+        # Get the input values
+        appointment_date = self.date_input.date().toString("yyyy-MM-dd")
+        appointment_time = self.time_input.time().toString("HH:mm")
+        description = self.description_input.text()
+
+        # Validate that all fields are filled
+        if not appointment_date or not appointment_time or not description:
+            QMessageBox.warning(self, "Error", "All fields are required.")
+            return
+
+        # Insert the appointment into the database
+        conn = sqlite3.connect('appointments.db')
+        cursor = conn.cursor()
+        cursor.execute("""
+        INSERT INTO appointments (date, time, description)
+        VALUES (?, ?, ?)
+        """, (appointment_date, appointment_time, description))
+
+        # Commit changes and close the connection
+        conn.commit()
+        conn.close()
+
+        # Show a success message
+        QMessageBox.information(self, "Success", "Appointment scheduled successfully!")
+
+        # Clear the input fields
+        self.date_input.clear()
+        self.time_input.clear()
+        self.description_input.clear()
+
+# Main function to run the application
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = AppointmentScheduler()
+    window.show()
+    sys.exit(app.exec())
+
+Explanation of the Code:
+
+1. PyQt6 Setup:
+
+We create a QMainWindow where the QVBoxLayout arranges the input fields for date, time, and description vertically.
+
+QDateEdit and QTimeEdit are used for selecting the date and time, respectively.
+
+QLineEdit is used for entering the description.
+
+QPushButton is used to trigger saving the appointment.
+
+
+
+2. Saving Appointments:
+
+When the Save Appointment button is clicked, the data entered by the user is validated. If all fields are filled, the appointment details are saved to the appointments.db database using SQLite.
+
+
+
+3. Message Box:
+
+After saving the appointment, we display a confirmation message with QMessageBox.
+
+
+
+
+
+---
+
+Step 5: Running Your Application in Visual Studio 2022
+
+1. Run the Application:
+
+Open the Python Terminal in Visual Studio and make sure your working directory is the project folder.
+
+Run the main.py file.
+
+
+python main.py
+
+
+2. Test the Application:
+
+The appointment scheduling window will appear.
+
+Select a date, time, and description, and click Save Appointment.
+
+The appointment will be saved to the database, and you should see a confirmation message.
