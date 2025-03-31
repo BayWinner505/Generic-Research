@@ -1,7 +1,23 @@
-CREATE procedure [dbo].[login val]
-(
-@email nvarchar(100),
-@password nvarchar(100)
-)
+def validate_login(username, password):
+    """Check if the provided username and password are correct."""
+    conn = sqlite3.connect("users.db")
+    cursor = conn.cursor()
+    
+    hashed_password = hash_password(password)
+    
+    cursor.execute("SELECT * FROM users WHERE username = ? AND password = ?", (username, hashed_password))
+    user = cursor.fetchone()
+    
+    conn.close()
+    
+    return user is not None  # Returns True if login is successful, else False
 
-SELECT COUNT(*) datbasename WHERE username=@username AND password=@password";
+# Example usage
+if __name__ == "__main__":
+    username = input("Enter username: ")
+    password = input("Enter password: ")
+    
+    if validate_login(username, password):
+        print("Login successful!")
+    else:
+        print("Invalid username or password.")
