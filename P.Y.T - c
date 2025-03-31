@@ -1,9 +1,2 @@
-public class Account
-{
-public int I public int Id { get; set; }
- 
-public string Name { get; set; }
-{
-
 
 Change to the correct fields
